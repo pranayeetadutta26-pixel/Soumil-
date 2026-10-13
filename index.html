@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Soumil ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #100609;
+  color: white;
+  font-family: Georgia, serif;
+  text-align: center;
+}
+
+section {
+  min-height: 100vh;
+  padding: 75px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #ff496c;
+  font-size: 38px;
+}
+
+p {
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+button {
+  background: #d71945;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 14px 22px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card {
+  border: 1px solid #ff496c;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 12px;
+  max-width: 330px;
+  background: #210c13;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: float 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  color: #ff91a8;
+}
+</style>
+</head>
+
+<body>
+
+<section>
+  <div style="font-size:55px">🎁 ❤️ 🌙</div>
+  <h1>Hey, Soumil!</h1>
+  <p>Someone has made something special just for you...</p>
+  <button onclick="showPage('gifts')">Open Your Surprise 💌</button>
+</section>
+
+<section id="gifts">
+  <h1>Your Little Surprises 🎁</h1>
+  <p>Every gift has a little message from me.</p>
+
+  <div class="card">
+    <h2>🎁 Gift 1</h2>
+    <button onclick="reveal('m1')">Open Me</button>
+    <p id="m1" class="hidden">You make ordinary moments special. ❤️</p>
+  </div>
+
+  <div class="card">
+    <h2>🎁 Gift 2</h2>
+    <button onclick="reveal('m2')">Open Me</button>
+    <p id="m2" class="hidden">From our little fights to our favourite memories, every chapter matters. 🌙</p>
+  </div>
+
+  <div class="card">
+    <h2>🎁 Gift 3</h2>
+    <button onclick="reveal('m3')">Open Me</button>
+    <p id="m3" class="hidden">Happy Birthday to someone who means so much to me! 🎂</p>
+  </div>
+
+  <button onclick="showPage('story')">Our Story ➜</button>
+</section>
+
+<section id="story">
+  <h1>Our Little Universe 🌌</h1>
+
+  <div class="card">
+    <h3>📚 The Beginning</h3>
+    <p>It started in economics tuition, when we were just classmates.</p>
+  </div>
+
+  <div class="card">
+    <h3>😝 The Enemy Era</h3>
+    <p>Teasing, little fights, and moments we didn't know would become memories.</p>
+  </div>
+
+  <div class="card">
+    <h3>❤️ Our Story</h3>
+    <p>Somewhere along the way, our story became something special.</p>
+  </div>
+
+  <button onclick="showPage('letter')">One Last Surprise 💌</button>
+</section>
+
+<section id="letter">
+  <h1>For You, Soumil ❤️</h1>
+  <button onclick="reveal('letterText')">Open My Letter 💌</button>
+
+  <div id="letterText" class="card hidden">
+    <p>
+      Happy Birthday, my favourite person! ❤️
+      <br><br>
+      Thank you for being part of my story.
+      I hope your new year brings you happiness,
+      laughter, success, and beautiful memories.
+      <br><br>
+      No matter how our story began, I am grateful
+      for the memories we have made together.
+      <br><br>
+      With love, your Moon 🌙
+    </p>
+    <h2>Happy Birthday, Soumil! 🎂</h2>
+  </div>
+
+  <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
+
+  <p>Made with love, just for you. ❤️</p>
+</section>
+
+<audio id="music" loop>
+  <source src="" type="audio/mpeg">
+</audio>
+
+<script>
+function reveal(id) {
+  document.getElementById(id).classList.toggle('hidden');
+}
+
+function showPage(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: 'smooth'
+  });
+}
+
+function toggleMusic() {
+  alert("To add music, upload a song you have permission to use and connect its audio file to this website.");
+}
+
+setInterval(function() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.textContent = ['❤️','💗','💕','✨'][Math.floor(Math.random()*4)];
+  heart.style.left = Math.random()*100 + 'vw';
+  heart.style.fontSize = (15 + Math.random()*20) + 'px';
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 7000);
+}, 700);
+</script>
+
+</body>
+  </html>
